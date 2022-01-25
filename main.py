@@ -6,7 +6,10 @@ app = Flask(__name__)
 
 @app.route('/crypto')
 def hello_world():
-    return jsonify(getCrypto.crypto())
+    try:
+        return jsonify(getCrypto.crypto())
+    except:
+        return "API Down"
 
 
 if __name__ == '__main__':
