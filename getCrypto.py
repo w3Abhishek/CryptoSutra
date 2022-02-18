@@ -6,6 +6,7 @@ def crypto():
     response = requests.get(api_url)
     data = response.json()
     cryptoData = {
+    'status': 200,
         'price' : 
             {
                 'BTC' : data['data'][0]['metrics']['market_data']['price_usd'],

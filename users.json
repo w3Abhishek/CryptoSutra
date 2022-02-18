@@ -1,0 +1,22 @@
+{
+    "status": 200,
+    "abhishek": {
+	"token":123,
+        "name": "Abhishek Verma",
+        "email": "abhishek@droidmaze.com",
+        "password": "abhishek2020",
+        "country": "India"
+    },
+    "javed": {
+        "name": "Javed Akhtar",
+        "email": "javed@qdient.com",
+        "password": "javed2020",
+        "country": "India"
+    },
+    "vikas": {
+        "name": "Vikas Kumar",
+        "email": "vikas@google.com",
+        "password": "vikas2020",
+        "country": "India"
+    }
+}
