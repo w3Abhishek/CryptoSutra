@@ -9,4 +9,4 @@ CryptoSutra is a web app that helps you to practice crypto trading. We support m
 - Partha Maity (👨‍💻)
 - Vikas Kumar (🎨)
 
-**Note:** Contributions are welcomed. To contribue, fork the project and send a pull request. We will analyze your contributed code and merge it to our project.
+**Note:** Contributions are welcomed. To contribue, fork the project and send a pull request. We will analyze your contributed code and merge it to our project. Thanks
