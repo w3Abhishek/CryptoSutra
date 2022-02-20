@@ -33,7 +33,7 @@
 			                    l-159.303,79.651V240.461l159.303-79.651V372.913z"/>
                     </svg>
                 </a>
-                <a href="#" class="account">
+                <a href="#" class="account" onclick="showSettings()">
                     <div class="circle"></div>
                     <div class="rect"></div>
                 </a>
@@ -82,23 +82,11 @@
                     </div>
                 </div>
             </div>
-            <div class="update-menu">
-                <form action="#" class="update">
-                    <input type="text" id="upd-name" placeholder="Name">
-                    <input type="email" id="upd-email" placeholder="email">
-                    <input type="text" id="upd-username" placeholder="Username">
-                    <input type="password" id="old-pw" placeholder="Old Password">
-                    <input type="text" id="new-pw" placeholder="New Password">
-                    <input type="text" id="cfm-pw" placeholder="Confirm Password">
-                    <br>
-                    <input type="submit" value="UPDATE">
-                    <div class="del-reset">
-                        <div class="reset">RESET</div>
-                        <div class="del">DELETE</div>
-                    </div>
-                </form>              
+            <div class="update-menu" id="update-menu">
+                              
             </div>
         </div>
     </div>
+    <script src="./app/app.js"></script>
 </body>
 </html>

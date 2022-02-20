@@ -593,7 +593,6 @@ nav > .log-out{
     background: var(--dashboard-bg-color);
     padding: 15px;
     margin-top: 30px;
-    display: none;
 }
 
 .update > input{
