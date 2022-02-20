@@ -1,22 +1,19 @@
 {
     "status": 200,
-    "abhishek": {
-	"token":123,
-        "name": "Abhishek Verma",
-        "email": "abhishek@droidmaze.com",
-        "password": "abhishek2020",
-        "country": "India"
-    },
-    "javed": {
-        "name": "Javed Akhtar",
-        "email": "javed@qdient.com",
-        "password": "javed2020",
-        "country": "India"
-    },
-    "vikas": {
-        "name": "Vikas Kumar",
-        "email": "vikas@google.com",
-        "password": "vikas2020",
-        "country": "India"
+    "utkarsh": {
+        "name": "utkarsh",
+        "email": "utkarsh@gmail.com",
+        "password": "1234",
+        "country": "India",
+        "avatar": "https://theabhishek.dev/files/avatar.png",
+        "transactions": [],
+        "stats": {
+            "balance": 150000,
+            "profit": 0,
+            "loss": 0,
+            "invested": 0
+        },
+        "investments": [],
+        "cryptos": {}
     }
 }
