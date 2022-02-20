@@ -71,9 +71,7 @@
             <div class="portfolio-asset">
                 <div class="portfolio">
                     <h2 class="pf-heading">Portfolio</h2>
-                    <div class="graph">
-                        <!-- <div id="curve_chart" style="width: 100%; height: 100%"></div> -->
-                    </div>
+                    <div class="graph"></div>
                 </div>
                 <div class="asset">
                     <h2 class="asset-heading">Assets</h2>
@@ -84,33 +82,23 @@
                     </div>
                 </div>
             </div>
+            <div class="update-menu">
+                <form action="#" class="update">
+                    <input type="text" id="upd-name" placeholder="Name">
+                    <input type="email" id="upd-email" placeholder="email">
+                    <input type="text" id="upd-username" placeholder="Username">
+                    <input type="password" id="old-pw" placeholder="Old Password">
+                    <input type="text" id="new-pw" placeholder="New Password">
+                    <input type="text" id="cfm-pw" placeholder="Confirm Password">
+                    <br>
+                    <input type="submit" value="UPDATE">
+                    <div class="del-reset">
+                        <div class="reset">RESET</div>
+                        <div class="del">DELETE</div>
+                    </div>
+                </form>              
+            </div>
         </div>
     </div>
 </body>
 </html>
-
-<!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-    google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ['Year', 'Sales', 'Expenses'],
-        ['2004',  1000,      400],
-        ['2005',  1170,      460],
-        ['2006',  660,       1120],
-        ['2007',  1030,      540]
-      ]);
-
-      var options = {
-        title: 'Company Performance',
-        curveType: 'function',
-        legend: { position: 'bottom' }
-      };
-
-      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-      chart.draw(data, options);
-    }
-  </script> -->

@@ -7,6 +7,7 @@
     --base-color: white;
     --base-bg-color: #111;
     --font-color: #111;
+    --login-button: #2DA4FE;
 }
 
 *{
@@ -290,6 +291,7 @@ nav > .log-out{
     height: 96vh;
     border-radius: 15px;
     padding: 20px 30px;
+    position: relative;
 }
 
 .db-box{
@@ -462,19 +464,6 @@ nav > .log-out{
     opacity: 0.8;
 }
 
-.header > .login{
-    position: absolute;
-    right: 20px;
-    background-color: var(--title-color);
-    border-radius: 5px;
-    color: var(--login-base-color);
-    font-weight: bold;
-    /* letter-spacing: 1px; */
-    font-size: 1rem;
-    padding: 5px 15px;
-    text-decoration: none;
-}
-
 .registration{
     background-color: var(--login-head-color);
     margin-top: 100px;
@@ -490,6 +479,7 @@ nav > .log-out{
     gap: 15px;
     flex-direction: column;
     justify-content: space-evenly;
+    color: var(--title-color);
 }
 
 .registration > .regis{
@@ -497,7 +487,8 @@ nav > .log-out{
     padding-top: 15px;
 }
 
-.registration > input{
+
+.registration  input{
     font-size: 1.3rem;
     border-radius: 5px;
     padding: 5px 10px;
@@ -508,14 +499,143 @@ nav > .log-out{
     box-shadow: 0 5px 3px var(--login-base-color);
 }
 
-.registration > input::placeholder{
+.registration  input::placeholder{
     color: var(--title-color);
     letter-spacing: 1px;
     font-size: 1rem;
 }
 
-.registration > input[type="submit"]{
-    margin-bottom: 35px;
+.registration  input[type="submit"]{
+    /* margin-bottom: 35px; */
     cursor: pointer;
     padding: 12px 0;
+    background-color: var(--login-button);
+    border: none;
+}
+
+.registration  input[type="submit"]:hover{
+    outline: 1px solid white;
+}
+
+.registration  .login{
+    background-color: var(--login-button);
+    border-radius: 5px;
+    /* color: var(--login-base-color); */
+    font-weight: bold;
+    /* letter-spacing: 1px; */
+    font-size: 1rem;
+    padding: 5px 15px;
+    text-decoration: none;
+    padding: 12px 0;
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--title-color);
+    font-weight: normal;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 3px var(--login-base-color);
+    margin-bottom: 15px;
+    /* transition-duration: 500ms; */
+}
+
+.registration  .login:hover{
+    outline: 1px solid white;
+}
+
+.hr-line{
+    border: 2px solid var(--login-base-color);
+    /* width: 100%; */
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hr-line:before{
+    position: absolute;
+    content: "or";
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #415366;
+}
+
+
+.registration > .fields{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* display: none; */
+}
+
+.user-login{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    display: none;
+}
+
+
+/* update setting style */
+
+.update-menu{
+    /* border: 1px solid red; */
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    background: var(--dashboard-bg-color);
+    padding: 15px;
+    margin-top: 30px;
+    display: none;
+}
+
+.update > input{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--base-bg-color);
+    padding: 5px;
+    font-size: 1.2rem;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.update > input[type="submit"]{
+    border: none;
+    cursor: pointer;
+    background-color: var(--login-button);
+    padding: 10px 0;
+    border-radius: 5px;
+    margin-top: 20px;
+    color: white;
+}
+
+.update > .del-reset{
+    display: flex;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.del-reset > div{
+    text-align: center;
+    /* border: 1px solid red; */
+    padding: 10px 60px;
+    border-radius: 5px;
+}
+
+.del-reset > .reset{
+    background-color: #5D17EB;
+}
+
+.del-reset > .del{
+    background-color: red;
 }
