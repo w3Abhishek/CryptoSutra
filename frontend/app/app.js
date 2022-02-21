@@ -126,9 +126,15 @@ function loadDashboard(){
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="update-menu" id="update-menu">
-                                                    
+                                    <div class="update-menu" id="update-menu">  
                                     </div>
+                                    <div class="news-container">
+                                    <h1 class="news-head">News</h1>
+                                    <hr>
+                                    <div class="news-section">
+                                        <div class="featured-img"></div>
+                                    </div>
+        </div>
                                 </div>
                             </div>`
             document.getElementById("main_container").innerHTML = dashboard_html;
