@@ -303,63 +303,6 @@ nav > .log-out{
     align-items: center;
 }
 
-.acc-search-box{
-    /* border: 1px solid red; */
-    /* width: 100%; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.acc-search-box > .search, .acc-search-box > .bell{
-    height: 50px;
-    width: 50px;
-    background-color: #eee;
-    padding: 14px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.acc-search-box > .bell{
-    padding: 12px;
-}
-
-.acc-search-box > .acc{
-    height: 50px;
-    width: 160px;
-    background-color: #eee;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.acc > .avatar{
-    height: 50px;
-    width: 50px;
-    background-color: orange;
-    border-radius: 50%;
-    position: relative;
-    bottom: 13px;
-    left: 3px;
-}
-
-.acc > .name{
-    margin-left: 15px;
-}
-
-.avatar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* overflow: hidden; */
-}
-
-.avatar .account .circle, .avatar .account .rect{
-    border-color: black;
-}
-
 .portfolio-asset{
     /* border: 1px solid red; */
     position: relative;

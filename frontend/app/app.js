@@ -87,30 +87,6 @@ function loadDashboard(){
                                 <div class="dash-board-container">
                                     <div class="db-box">
                                         <h1 class="overview">Overview</h1>
-                                        <div class="acc-search-box">
-                                            <div class="search">
-                                                <svg version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 488.4 488.4" style="enable-background:new 0 0 488.4 488.4;">
-                                                    <path d="M0,203.25c0,112.1,91.2,203.2,203.2,203.2c51.6,0,98.8-19.4,134.7-51.2l129.5,129.5c2.4,2.4,5.5,3.6,8.7,3.6
-                                                            s6.3-1.2,8.7-3.6c4.8-4.8,4.8-12.5,0-17.3l-129.6-129.5c31.8-35.9,51.2-83,51.2-134.7c0-112.1-91.2-203.2-203.2-203.2
-                                                            S0,91.15,0,203.25z M381.9,203.25c0,98.5-80.2,178.7-178.7,178.7s-178.7-80.2-178.7-178.7s80.2-178.7,178.7-178.7
-                                                            S381.9,104.65,381.9,203.25z"/>
-                                                </svg>
-                                            </div>
-                                            <div class="bell">
-                                                <svg viewBox="0 0 16 16" class="bi bi-bell">
-                                                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
-                                                </svg>
-                                            </div>
-                                            <div class="acc">
-                                                <div class="avatar">
-                                                    <div class="account">
-                                                        <div class="circle"></div>
-                                                        <div class="rect"></div>
-                                                    </div>
-                                                </div>
-                                                <h3 class="name">Chote</h3>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="portfolio-asset">
                                         <h2 class="asset-heading">Portfolio</h2>
