@@ -132,8 +132,7 @@ function loadDashboard(){
                                 </div>
                             </div>`
             document.getElementById("main_container").innerHTML = dashboard_html;
-    
-                        }
+            }
     else{
         document.getElementById("warning").innerHTML = `<p class="loginFailWarn">Invalid username or password.</p>`;
     }
@@ -165,9 +164,7 @@ function showContainer(){
                         </form>
                         </div>
                     </div>`
-        
                     document.getElementById("main_container").innerHTML = login_section;
-    
 }
 
 function showNews() {

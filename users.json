@@ -15,5 +15,37 @@
         },
         "investments": [],
         "cryptos": {}
+    },
+    "abhishek": {
+        "name": null,
+        "email": "abhishek@droidmaze.com",
+        "password": "abhishek2020",
+        "country": "India",
+        "avatar": "https://theabhishek.dev/files/avatar.png",
+        "transactions": [],
+        "stats": {
+            "balance": 150000,
+            "profit": 0,
+            "loss": 0,
+            "invested": 0
+        },
+        "investments": [],
+        "cryptos": {}
+    },
+    "partha": {
+        "name": "Partha Maity",
+        "email": "hellowovi@gmail.com",
+        "password": "hellowovi",
+        "country": "India",
+        "avatar": "https://theabhishek.dev/files/avatar.png",
+        "transactions": [],
+        "stats": {
+            "balance": 150000,
+            "profit": 0,
+            "loss": 0,
+            "invested": 0
+        },
+        "investments": [],
+        "cryptos": {}
     }
 }

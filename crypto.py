@@ -2,7 +2,7 @@ import requests
 
 api_url = 'https://data.messari.io/api/v1/assets?fields=id,slug,symbol,metrics/market_data/price_usd'
 
-def crypto():
+def getAll():
     response = requests.get(api_url)
     data = response.json()
     cryptoData = {

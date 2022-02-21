@@ -26,6 +26,14 @@ def create(username, name, email, password, country, avatar):
 			jsonDB.write(jsonUsers)
 		return {"status":200}
 
+def transactions(username):
+	try:
+		json_db = open("users.json", "r")
+		users = json.load(json_db)
+		return users[username][transactions]
+	except:
+		return {'status_code':404}
+
 def login(username, password):
 	json_db = open("users.json", "r")
 	users = json.load(json_db)

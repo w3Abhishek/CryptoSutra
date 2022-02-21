@@ -1,7 +1,13 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS, cross_origin
 import crypto, users, trade, news, settings
 app = Flask(__name__)
-
+CORS(app)
+cors = CORS(app, resource={
+    r"/*":{
+        "origins":"*"
+    }
+})
 @app.route('/')
 def main_page():
     return "Welcome to CryptoSutra API page. Strangers are not welcomed here. Please use our official web app."
@@ -40,7 +46,7 @@ def user_stats():
 
 # Trading API
 @app.route('/crypto')
-def crypto():
+def get_crypto():
     try:
         currency = request.args.get('currency')
         if currency == None:
@@ -74,6 +80,7 @@ def getnews():
         currency = request.args.get('currency')
         if currency == None:
             return jsonify(news.all())
+            # return jsonify({'status':200})
         else:
             return jsonify(news.get(currency))
     except:
@@ -83,7 +90,7 @@ def getnews():
 # Settings API
 @app.route('/settings/reset', methods=['GET', 'POST'])
 def reset_user():
-    if request.method == 'POST':
+    if request.method == 'GET':
         username = request.args.get('username')
         return jsonify(settings.reset(username))
     else:
@@ -91,7 +98,7 @@ def reset_user():
 
 @app.route('/settings/delete', methods=['GET', 'POST'])
 def delete_user():
-    if request.method == 'POST':
+    if request.method == 'GET':
         username = request.args.get('username')
         return jsonify(settings.delete(username))
     else:
@@ -99,7 +106,7 @@ def delete_user():
 
 @app.route('/settings/update', methods=['GET', 'POST'])
 def update_user():
-    if request.method == 'POST':
+    if request.method == 'GET':
         username = request.args.get('username')
         name = request.args.get('name')
         email = request.args.get('email')
@@ -108,7 +115,12 @@ def update_user():
         avatar = request.args.get('avatar')
         return jsonify(settings.update(username, name, email, password, country, avatar))
     else:
-        return jsonify({"status":405, "message":"GET Method not allowed"})
+        return jsonify({"status":405, "message":"POST Method not allowed"})
+
+@app.route('/user/transactions')
+def get_transactions():
+    username = request.args.get('username')
+    return jsonify(users.transactions(username))
 
 if __name__ == '__main__':
-    app.run(port=5500)
+    app.run(host="0.0.0.0", port=5500)
