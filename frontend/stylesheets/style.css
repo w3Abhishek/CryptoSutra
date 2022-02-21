@@ -535,6 +535,7 @@ nav > .log-out{
     box-shadow: 0 5px 3px var(--login-base-color);
     margin-bottom: 15px;
     /* transition-duration: 500ms; */
+    border: none;
 }
 
 .registration  .login:hover{
@@ -615,16 +616,17 @@ nav > .log-out{
     color: white;
 }
 
-.update > .del-reset{
+.del-reset{
     display: flex;
-    /* border: 1px solid red; */
+    /* border: 1px solid greenyellow; */
     justify-content: space-between;
     color: white;
     font-weight: bold;
     letter-spacing: 1px;
+    /* width: 100%; */
 }
 
-.del-reset > div{
+.del-reset > button{
     text-align: center;
     /* border: 1px solid red; */
     padding: 10px 60px;
@@ -633,8 +635,18 @@ nav > .log-out{
 
 .del-reset > .reset{
     background-color: #5D17EB;
+    cursor: pointer;
 }
 
 .del-reset > .del{
     background-color: red;
+    cursor: pointer;
+}
+.alt_button
+{
+    /* margin-bottom: 35px; */
+    cursor: pointer;
+    padding: 12px 0;
+    background-color: var(--login-button);
+    border: none;
 }
