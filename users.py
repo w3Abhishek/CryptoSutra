@@ -30,7 +30,7 @@ def transactions(username):
 	try:
 		json_db = open("users.json", "r")
 		users = json.load(json_db)
-		return users[username][transactions]
+		return users[username]['transactions']
 	except:
 		return {'status_code':404}
 
