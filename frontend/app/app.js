@@ -149,47 +149,64 @@ function loadDashboard(){
                                 <div class="dash-board-container">
                                     <div class="db-box">
                                         <h1 class="overview">Overview</h1>
-                                        <div class="acc-search-box">
-                                            <div class="search">
-                                                <svg version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 488.4 488.4" style="enable-background:new 0 0 488.4 488.4;">
-                                                    <path d="M0,203.25c0,112.1,91.2,203.2,203.2,203.2c51.6,0,98.8-19.4,134.7-51.2l129.5,129.5c2.4,2.4,5.5,3.6,8.7,3.6
-                                                            s6.3-1.2,8.7-3.6c4.8-4.8,4.8-12.5,0-17.3l-129.6-129.5c31.8-35.9,51.2-83,51.2-134.7c0-112.1-91.2-203.2-203.2-203.2
-                                                            S0,91.15,0,203.25z M381.9,203.25c0,98.5-80.2,178.7-178.7,178.7s-178.7-80.2-178.7-178.7s80.2-178.7,178.7-178.7
-                                                            S381.9,104.65,381.9,203.25z"/>
-                                                </svg>
-                                            </div>
-                                            <div class="bell">
-                                                <svg viewBox="0 0 16 16" class="bi bi-bell">
-                                                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
-                                                </svg>
-                                            </div>
-                                            <div class="acc">
-                                                <div class="avatar">
-                                                    <div class="account">
-                                                        <div class="circle"></div>
-                                                        <div class="rect"></div>
-                                                    </div>
-                                                </div>
-                                                <h3 class="name">Chote</h3>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="portfolio-asset">
-                                        <div class="portfolio">
-                                            <h2 class="pf-heading">Portfolio</h2>
-                                            <div class="graph"></div>
+                                        <h2 class="asset-heading">Portfolio</h2>
+                                        <div class="card1 cardsize">
+                                            <h1 class="crypto-title">Portfolio value</h1>
+                                            <h2 class="value" id="total-bal">Rs 0.0000</h2>
+                                            <div class="bal">
+                                                <h2>Balance: </h2>
+                                                <h2 id="in-bal">20000</h2>
+                                            </div>
                                         </div>
-                                        <div class="asset">
-                                            <h2 class="asset-heading">Assets</h2>
-                                            <div class="asset-box">
-                                                <a href="#" class="asset1 assetSize"></a>
-                                                <a href="#" class="asset2 assetSize"></a>
-                                                <a href="#" class="asset3 assetSize"></a>
+                                        <div class="card2 cardsize">
+                                            <h1 class="crypto-title">Bitcoin</h1>
+                                            <h2 class="value" id="total-bal">Rs 0.0000</h2>
+                                        </div>
+                                        <div class="card3 cardsize">
+                                            <h1 class="crypto-title">Etherrum</h1>
+                                            <h2 class="value" id="total-bal">Rs 0.0000</h2>
+                                        </div>
+                                        <div class="no-invest">
+                                            <h1>No Investments Yet...</h1>
+                                            <h3>Start investing now to learn and practice crypto</h3>
+                                        </div>
+                                    </div>
+
+                                    <div class="transaction">
+                                        <h2 class="trans">Transactions</h2>
+                                        <div class="col-name">
+                                            <h2>Coin</h2>
+                                            <h2>Volume</h2>
+                                            <h2>Price</h2>
+                                        </div>
+                                        <div class="trans-value">
+                                            <h2 id="coin">Bitcoin</h2>
+                                            <h2 id="volume">3.0000</h2>
+                                            <h2 id="price">20000</h2>
+                                        </div>
+                                        <div class="no-trans-logo">
+                                            <div class="trans-logo">
+                                                <svg width="256" height="256" viewBox="0 0 256 256">
+                                                    <!-- <desc>Created with Fabric.js 1.7.22</desc> -->
+                                                    <defs>
+                                                    </defs>
+                                                    <g transform="translate(128 35) scale(0.72 0.72)">
+                                                        <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(-175.05 -175.05000000000004) scale(3.89 3.89)" >
+                                                        <path d="M 45 0 C 20.147 0 0 20.147 0 45 c 0 24.853 20.147 45 45 45 s 45 -20.147 45 -45 C 90 20.147 69.853 0 45 0 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(248,195,65); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                                        <path d="M 45 10 c -19.33 0 -35 15.67 -35 35 c 0 19.33 15.67 35 35 35 s 35 -15.67 35 -35 C 80 25.67 64.33 10 45 10 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(206,140,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                                        <polygon points="73.42,18.09 78.94,19.85 74.48,23.55 72.72,29.07 69.02,24.61 63.5,22.84 67.96,19.14 69.72,13.63 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,237,154); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+                                                        <polygon points="81.31,35.82 83.27,38.73 79.76,38.81 76.85,40.77 76.77,37.26 74.81,34.35 78.32,34.27 81.24,32.31 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,237,154); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+                                                        <path d="M 58.115 32.89 c 0 -4.284 -3.707 -7.769 -8.264 -7.769 h -3.369 v -3.717 h -6 v 3.717 h -8.597 v 39.758 h 8.597 v 3.717 h 6 v -3.717 h 3.369 c 4.557 0 8.264 -3.485 8.264 -7.77 v -7.341 c 0 -1.796 -0.651 -3.452 -1.744 -4.769 c 1.093 -1.317 1.744 -2.973 1.744 -4.769 V 32.89 z M 52.115 57.11 c 0 0.959 -1.037 1.77 -2.264 1.77 H 37.885 v -10.88 h 11.966 c 1.227 0 2.264 0.811 2.264 1.77 V 57.11 z M 52.115 40.231 c 0 0.959 -1.037 1.769 -2.264 1.769 H 37.885 V 31.121 h 11.966 c 1.227 0 2.264 0.81 2.264 1.769 V 40.231 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(248,195,65); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                                    </g>
+                                                    </g>
+                                                </svg>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="update-menu" id="update-menu">  
-                                    </div>
+
+                                    <div class="update-menu" id="update-menu"></div>
                                     <div class="news-container">
                                     <h1 class="news-head">News</h1>
                                     <hr>
@@ -200,7 +217,8 @@ function loadDashboard(){
                                 </div>
                             </div>`
             document.getElementById("main_container").innerHTML = dashboard_html;
-            }
+    
+                        }
     else{
         document.getElementById("warning").innerHTML = `<p class="loginFailWarn">Invalid username or password.</p>`;
     }
@@ -232,7 +250,9 @@ function showContainer(){
                         </div>
                         </div>
                     </div>`
+        
                     document.getElementById("main_container").innerHTML = login_section;
+    
 }
 
 function showNews() {
