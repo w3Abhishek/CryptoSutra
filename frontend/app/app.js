@@ -18,7 +18,7 @@ var login_section = `<div class="registration" >
                     <input type="text" placeholder="Username" id="username">
                     <input type="password" placeholder="Password" id="pw">
                     <input type="submit" value="LOGIN" onclick="login()">
-                    <button class="login" onclick="showRegister(); loadDashboard();">REGISTER</button>
+                    <button class="login" onclick="showRegister();">REGISTER</button>
                     </div>`
 
 function checkUsername(){
@@ -47,7 +47,7 @@ function register(){
     var reqURL = BASE + 'user/create?name=' + name + '&email=' + email + '&username=' + username + '&password=' + pw;
     recieveJson(reqURL) 
     .then(data => {
-        if (data['status_code'] == 200){
+        if (data['status'] == 200){
             loadDashboard();
         }
         else
@@ -146,7 +146,7 @@ function loadDashboard(){
                                     </div>
                                     <a href="#" class="log-out"></a>
                                 </nav>
-                                <div class="dash-board-container">
+                                <div class="dash-board-container" id="dashcontainer">
                                     <div class="db-box">
                                         <h1 class="overview">Overview</h1>
                                     </div>
@@ -212,6 +212,9 @@ function loadDashboard(){
                                     <hr>
                                     <div class="news-section">
                                         <div class="featured-img"></div>
+                                        <div class="news-content">
+                                            <h1 class="news-title">Bitcoin Price Hits $9,000</h1>
+
                                     </div>
         </div>
                                 </div>
@@ -240,10 +243,6 @@ function showContainer(){
                                 <input type="text" placeholder="Username" id="username" onchange="checkUsername()">
                                 <input type="password" placeholder="Password" id="pw">
                             </div>
-                            <div class="user-login">
-                                <input type="text" placeholder="Username" class="username">
-                                <input type="password" placeholder="Password" class="loginpw">
-                            </div>
                             <input type="submit" value="REGISTER" onclick="register()">
                             <div class="hr-line"></div>
                             <button onclick="showLogin()" href="#" class="login">Login</button>
@@ -252,7 +251,6 @@ function showContainer(){
                     </div>`
         
                     document.getElementById("main_container").innerHTML = login_section;
-    
 }
 
 function showNews() {
@@ -263,8 +261,16 @@ function showNews() {
     console.log(news.length);
     while(i < news.length)
     {
-    newsEntries += `<p class="news_entry"><a href="${news[i].link}" class="news_entries">${news[i].title}</a> - ${news[i].source.title}</p>`;
+    newsEntries += `<a href="${news[i].link}"><div class="news-section">
+    <div class="featured-img"></div>
+    <div class="news-content">
+        <h2 class="news-title">${news[i].title}</h2>
+        <p class="news-source">${news[i].source.title}</p></div></a>`;
         i += 1;
     }
-    document.getElementById("update-menu").innerHTML = newsEntries
+    var newsContainer = `<div class="news-container">
+    <h1 class="news-head">News</h1>
+    <hr>
+    ${newsEntries}</div>`
+    document.getElementById("dashcontainer").innerHTML = newsContainer;
 }
