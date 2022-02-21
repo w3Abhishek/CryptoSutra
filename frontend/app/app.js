@@ -1,20 +1,82 @@
-var register_section =`<form action="#" class="registration" onsubmit="register()">
+const BASE = 'http://20.192.7.73:5500/';
+
+const recieveJson = async (URL) => {
+    const response = await fetch(URL)
+    return await response.json()
+}
+var register_section =`<div class="registration" >
                     <h2 class="regis">Registration Form</h2>
                     <input type="text" placeholder="Name" id="name">
                     <input type="email" placeholder="email" id="email">
-                    <input type="text" placeholder="Username" id="username">
+                    <input type="text" placeholder="Username" id="username" onchange="checkUsername()">
                     <input type="password" placeholder="Password" id="pw">
-                    <input type="submit" value="REGISTER">
+                    <input type="submit" value="REGISTER" onclick="register()">
                     <button onclick="showLogin()" class="login">LOGIN</button>
-                    </form>`
-var login_section = `<form action="#" class="registration" onsubmit="login()">
+                    </div>`
+var login_section = `<div class="registration" >
                     <h2 class="regis">Login Form</h2>
                     <input type="text" placeholder="Username" id="username">
                     <input type="password" placeholder="Password" id="pw">
-                    <input type="submit" value="LOGIN">
+                    <input type="submit" value="LOGIN" onclick="login()">
                     <button class="login" onclick="showRegister(); loadDashboard();">REGISTER</button>
-                    </form>`
+                    </div>`
 
+function checkUsername(){
+    var username = document.getElementById("username").value;
+    var reqURL = BASE + 'user/checkusername?username=' + username;
+    recieveJson(reqURL)
+    .then(data => {
+        if(data['status'] == 200){
+            document.getElementById("username").style.border = "2px solid red";
+        }
+        else{
+            
+        }
+    })
+    .catch(err => {
+        console.log(err)
+    }
+    )
+}
+
+function register(){
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var username = document.getElementById("username").value;
+    var pw = document.getElementById("pw").value;
+    var reqURL = BASE + 'user/create?name=' + name + '&email=' + email + '&username=' + username + '&password=' + pw;
+    recieveJson(reqURL) 
+    .then(data => {
+        if (data['status_code'] == 200){
+            loadDashboard();
+        }
+        else
+        {
+            alert("Signup Failed");
+        }
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
+function login(){
+    var username = document.getElementById("username").value;
+    var pw = document.getElementById("pw").value;
+    var reqURL = BASE + 'user/login?username=' + username + '&password=' + pw;
+    recieveJson(reqURL) 
+    .then(data => {
+        if (data['status'] == 200){
+            loadDashboard();
+        }
+        else
+        {
+            alert("Invalid Credentials");
+        }
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
 function showLogin(){
     document.getElementById("reg_container").innerHTML = login_section;
 }
@@ -31,13 +93,13 @@ function showSettings(){
     var name = userData['name'];
     var username = userData['username']
     var email = userData['email']
-    var settings_section = `<form action="#" class="update">
+    var settings_section = `<form action="#" class="update" onclick="update()">
                             <input type="text" id="upd-name" value="${name}" placeholder="Name">
                             <input type="email" id="upd-email" value="${email}" placeholder="email">
                             <input type="text" id="upd-username" value="${username}" placeholder="Username">
                             <input type="password" id="old-pw" placeholder="Old Password">
-                            <input type="text" id="new-pw" placeholder="New Password">
-                            <input type="text" id="cfm-pw" placeholder="Confirm Password">
+                            <input type="password" id="new-pw" placeholder="New Password">
+                            <input type="password" id="cfm-pw" placeholder="Confirm Password">
                             <br>
                             <input type="submit" value="UPDATE">
                         </form>
@@ -152,22 +214,22 @@ function showContainer(){
                             <h1 class="title">Welcome to<br> CryptoSutra</h1>
                             <p class="LTP">Learn | Trade | Practice</p>
                         </div><div id="reg_container">
-                        <form action="#" class="registration">
+                        <div action="#" class="registration">
                             <h2 id="regis" class="regis">Registration Form</h2>
                             <div class="fields">
                                 <input type="text" placeholder="Name" id="name">
                                 <input type="email" placeholder="email" id="email">
-                                <input type="text" placeholder="Username" id="username">
+                                <input type="text" placeholder="Username" id="username" onchange="checkUsername()">
                                 <input type="password" placeholder="Password" id="pw">
                             </div>
                             <div class="user-login">
                                 <input type="text" placeholder="Username" class="username">
                                 <input type="password" placeholder="Password" class="loginpw">
                             </div>
-                            <input type="submit" value="REGISTER">
+                            <input type="submit" value="REGISTER" onclick="register()">
                             <div class="hr-line"></div>
                             <button onclick="showLogin()" href="#" class="login">Login</button>
-                        </form>
+                        </div>
                         </div>
                     </div>`
                     document.getElementById("main_container").innerHTML = login_section;
