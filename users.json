@@ -29,24 +29,36 @@
                 "price": 2000,
                 "datetime": "2022-02-22 07:24:18.691987",
                 "type": "BUY"
+            },
+            {
+                "currency": "BTC",
+                "volume": 300,
+                "price": 20,
+                "datetime": "2022-02-22 07:46:15.293582",
+                "type": "BUY"
             }
         ],
         "stats": {
-            "balance": 146000,
+            "balance": 140000,
             "profit": 0,
             "loss": 0,
-            "invested": 4000
+            "invested": 10000
         },
         "investments": [
             {
                 "currency": "BTC",
                 "volume": 2,
                 "price": 2000
+            },
+            {
+                "currency": "BTC",
+                "volume": 300,
+                "price": 20
             }
         ],
         "cryptos": {
             "BTC": {
-                "volume": 2,
+                "volume": 302,
                 "price": 2000
             }
         }

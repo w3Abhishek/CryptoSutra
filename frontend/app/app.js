@@ -92,7 +92,7 @@ function showSettings(){
     recieveJson(reqURL)
     .then(data => {
         if(data['status'] == 200){
-            var user = data['user'];
+            var user = data;
             var name = user['name'];
             var email = user['email'];
             var username = user['username'];
@@ -113,7 +113,11 @@ function showSettings(){
                             <button class="del" onclick="deleteAccount()">DELETE</button>
                         </div></div>`
     document.getElementById("dashcontainer").innerHTML = settings_section;
-        
+    }})
+    .catch(err => {
+        console.log(err)
+    }
+    )
 }
 function resetAccount(){
     username = globalUsername;
@@ -134,6 +138,52 @@ function resetAccount(){
     }
     )
 }
+function deleteAccount(){
+    username = globalUsername;
+    var reqURL = BASE + 'user/delete?username=' + username;
+    recieveJson(reqURL)
+    .then(data => {
+        if (data['status'] == 200){
+            alert("Account Deleted Successfully");
+            window.location.href = "index.html";
+        }
+        else
+        {
+            alert("Account Deletion Failed");
+        }
+    }
+    )
+    .catch(err => {
+        console.log(err)
+    }
+    )
+}
+function updateAccount(){
+    username = globalUsername;
+    var name = document.getElementById("upd-name").value;
+    var email = document.getElementById("upd-email").value;
+    var username = document.getElementById("upd-username").value;
+    var oldpw = document.getElementById("old-pw").value;
+    var newpw = document.getElementById("new-pw").value;
+    var cfmpw = document.getElementById("cfm-pw").value;
+    var reqURL = BASE + 'user/update?username=' + username + '&name=' + name + '&email=' + email + '&password=' + newpw;
+    recieveJson(reqURL)
+    .then(data => {
+        if (data['status'] == 200){
+            alert("Account Updated Successfully");
+        }
+        else
+        {
+            alert("Account Update Failed");
+        }
+    }
+    )
+    .catch(err => {
+        console.log(err)
+    }
+    )
+}
+
 function loadDashboard(){
     if(true)
     {
@@ -168,7 +218,7 @@ function loadDashboard(){
                                             <div class="rect"></div>
                                         </div>
                                     </div>
-                                    <a href="#" class="log-out"></a>
+                                    <a href="#" class="log-out" onclick="logoutUser()"></a>
                                 </nav>
                                 <div class="dash-board-container" id="dashcontainer">
                                     <div class="db-box">
@@ -279,7 +329,7 @@ function showNews() {
     <div class="featured-img"></div>
     <div class="news-content">
         <h2 class="news-title">${news[i].title}</h2>
-        <p class="news-source">${news[i].source.title}</p></div></a>`;
+        <p class="news-source">${news[i].source.title}</p></div></div></a>`;
         i += 1;
     }
     var newsContainer = `<div class="news-container">
@@ -287,4 +337,10 @@ function showNews() {
     <hr>
     ${newsEntries}</div>`
     document.getElementById("dashcontainer").innerHTML = newsContainer;
+}
+
+function logoutUser()
+{
+globalUsername = "";
+showContainer();
 }
