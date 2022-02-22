@@ -1,5 +1,5 @@
 const BASE = 'http://20.192.7.73:5500/';
-
+var globalUsername;
 const recieveJson = async (URL) => {
     const response = await fetch(URL)
     return await response.json()
@@ -45,6 +45,7 @@ function register(){
     var username = document.getElementById("username").value;
     var pw = document.getElementById("pw").value;
     var reqURL = BASE + 'user/create?name=' + name + '&email=' + email + '&username=' + username + '&password=' + pw;
+    globalUsername = username;
     recieveJson(reqURL) 
     .then(data => {
         if (data['status'] == 200){
@@ -66,6 +67,7 @@ function login(){
     recieveJson(reqURL) 
     .then(data => {
         if (data['status'] == 200){
+            globalUsername = username;
             loadDashboard();
         }
         else
@@ -93,7 +95,7 @@ function showSettings(){
     var name = userData['name'];
     var username = userData['username']
     var email = userData['email']
-    var settings_section = `<form action="#" class="update" onclick="update()">
+    var settings_section = `<div class="update">
                             <input type="text" id="upd-name" value="${name}" placeholder="Name">
                             <input type="email" id="upd-email" value="${email}" placeholder="email">
                             <input type="text" id="upd-username" value="${username}" placeholder="Username">
@@ -101,13 +103,32 @@ function showSettings(){
                             <input type="password" id="new-pw" placeholder="New Password">
                             <input type="password" id="cfm-pw" placeholder="Confirm Password">
                             <br>
-                            <input type="submit" value="UPDATE">
-                        </form>
+                            <input type="submit" value="UPDATE" onclick="updateAccount()">
+                        </div>
                         <div class="del-reset">
-                            <button class="reset">RESET</button>
-                            <button class="del">DELETE</button>
+                            <button class="reset" onclick="resetAccount()">RESET</button>
+                            <button class="del" onclick="deleteAccount()">DELETE</button>
                         </div>`
     document.getElementById("update-menu").innerHTML = settings_section;
+}
+function resetAccount(){
+    username = globalUsername;
+    var reqURL = BASE + 'user/reset?username=' + username;
+    recieveJson(reqURL)
+    .then(data => {
+        if (data['status'] == 200){
+            alert("Account Reset Successfully");
+        }
+        else
+        {
+            alert("Account Reset Failed");
+        }
+    }
+    )
+    .catch(err => {
+        console.log(err)
+    }
+    )
 }
 function loadDashboard(){
     var response = {status_code : 200}
@@ -120,7 +141,7 @@ function loadDashboard(){
                                         <div class="burgerLine"></div>
                                     </div>
                                     <div class="nav-btn-box">
-                                        <a href="#" class="square">
+                                        <a href="#" class="square" onclick="loadDashboard()">
                                             <div class="sqr"></div>
                                             <div class="sqr"></div>
                                             <div class="sqr"></div>
@@ -207,16 +228,6 @@ function loadDashboard(){
                                     </div>
 
                                     <div class="update-menu" id="update-menu"></div>
-                                    <div class="news-container">
-                                    <h1 class="news-head">News</h1>
-                                    <hr>
-                                    <div class="news-section">
-                                        <div class="featured-img"></div>
-                                        <div class="news-content">
-                                            <h1 class="news-title">Bitcoin Price Hits $9,000</h1>
-
-                                    </div>
-        </div>
                                 </div>
                             </div>`
             document.getElementById("main_container").innerHTML = dashboard_html;
