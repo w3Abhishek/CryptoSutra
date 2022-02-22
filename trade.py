@@ -11,7 +11,7 @@ def buy(username, currency, volume, price):
 				users[username]['investments'].append({'currency':currency, 'volume':volume, 'price':price})
 				users[username]['stats']['invested'] += amount
 				users[username]['stats']['balance'] -= amount
-				users[username]['stats']['transactions'].append({'currency':currency, 'volume':volume,'price':price, 'datetime':datetime.now(), 'type':'BUY'})
+				users[username]['transactions'].append({'currency':currency, 'volume':volume,'price':price, 'datetime':str(datetime.datetime.now()), 'type':'BUY'})
 				jsonUsers = json.dumps(users, indent = 4)
 				with open("users.json", "w") as jsonDB:
 					jsonDB.write(jsonUsers)
@@ -21,7 +21,7 @@ def buy(username, currency, volume, price):
 				users[username]['investments'].append({'currency':currency, 'volume':volume, 'price':price})
 				users[username]['stats']['invested'] += amount
 				users[username]['stats']['balance'] -= amount
-				users[username]['stats']['transactions'].append({'currency':currency, 'volume':volume,'price':price, 'datetime':datetime.now(), 'type':'BUY'})
+				users[username]['transactions'].append({'currency':currency, 'volume':volume,'price':price, 'datetime':str(datetime.datetime.now()), 'type':'BUY'})
 				jsonUsers = json.dumps(users, indent = 4)
 				with open("users.json", "w") as jsonDB:
 					jsonDB.write(jsonUsers)
@@ -40,7 +40,7 @@ def sell(username, currency, volume, price):
 				users[username]['investments'].append({'currency':currency, 'volume':-volume, 'price':price})
 				users[username]['stats']['invested'] -= amount
 				users[username]['stats']['balance'] += amount
-				users[username]['stats']['transactions'].append({'currency':currency, 'volume':volume,'price':price, 'datetime':datetime.now(), 'type':'SELL'})
+				users[username]['transactions'].append({'currency':currency, 'volume':volume,'price':price, 'datetime':str(datetime.datetime.now()), 'type':'SELL'})
 				jsonUsers = json.dumps(users, indent = 4)
 				with open("users.json", "w") as jsonDB:
 					jsonDB.write(jsonUsers)

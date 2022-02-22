@@ -22,15 +22,34 @@
         "password": "abhishek2020",
         "country": "India",
         "avatar": "https://theabhishek.dev/files/avatar.png",
-        "transactions": [],
+        "transactions": [
+            {
+                "currency": "BTC",
+                "volume": 2,
+                "price": 2000,
+                "datetime": "2022-02-22 07:24:18.691987",
+                "type": "BUY"
+            }
+        ],
         "stats": {
-            "balance": 150000,
+            "balance": 146000,
             "profit": 0,
             "loss": 0,
-            "invested": 0
+            "invested": 4000
         },
-        "investments": [],
-        "cryptos": {}
+        "investments": [
+            {
+                "currency": "BTC",
+                "volume": 2,
+                "price": 2000
+            }
+        ],
+        "cryptos": {
+            "BTC": {
+                "volume": 2,
+                "price": 2000
+            }
+        }
     },
     "partha": {
         "name": "Partha Maity",

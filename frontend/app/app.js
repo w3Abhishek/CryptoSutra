@@ -87,15 +87,18 @@ function showRegister(){
 }
 
 function showSettings(){
-    var userData = {
-        name : "Abhishek Verma",
-        username : "abhishek",
-        email : "abhishek@droidmaze.com"
-    };
-    var name = userData['name'];
-    var username = userData['username']
-    var email = userData['email']
-    var settings_section = `<div class="update">
+    username = globalUsername;
+    var reqURL = BASE + 'user?username=' + username;
+    recieveJson(reqURL)
+    .then(data => {
+        if(data['status'] == 200){
+            var user = data['user'];
+            var name = user['name'];
+            var email = user['email'];
+            var username = user['username'];
+            var pw = user['password'];
+            var settings_section = `<div class="update-menu" id="update-menu">
+                            <div class="update">
                             <input type="text" id="upd-name" value="${name}" placeholder="Name">
                             <input type="email" id="upd-email" value="${email}" placeholder="email">
                             <input type="text" id="upd-username" value="${username}" placeholder="Username">
@@ -108,8 +111,9 @@ function showSettings(){
                         <div class="del-reset">
                             <button class="reset" onclick="resetAccount()">RESET</button>
                             <button class="del" onclick="deleteAccount()">DELETE</button>
-                        </div>`
-    document.getElementById("update-menu").innerHTML = settings_section;
+                        </div></div>`
+    document.getElementById("dashcontainer").innerHTML = settings_section;
+        
 }
 function resetAccount(){
     username = globalUsername;
@@ -131,8 +135,7 @@ function resetAccount(){
     )
 }
 function loadDashboard(){
-    var response = {status_code : 200}
-    if(response['status_code'] == 200)
+    if(true)
     {
 
         var dashboard_html = `<div class="container">
@@ -227,7 +230,7 @@ function loadDashboard(){
                                         </div>
                                     </div>
 
-                                    <div class="update-menu" id="update-menu"></div>
+                                    
                                 </div>
                             </div>`
             document.getElementById("main_container").innerHTML = dashboard_html;
