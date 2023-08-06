@@ -3,7 +3,7 @@ CryptoSutra is a web app that helps you to practice crypto trading.
 It gives you the real time environment to practice.
 We support more than 15 cryptocurrencies which you can trade to practice.
 
-Website: https://cryptosutra.now.sh (offline due to lack of funds)
+Website: https://cryptosutra.now.sh (GCloud Trial Ended)
 
 ![30x30](https://github.com/w3Abhishek/CryptoSutra/raw/main/assets/CRYPTO%20SUTRA.png)
 
